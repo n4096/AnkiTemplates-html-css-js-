@@ -1,0 +1,60 @@
+<div id="sentHolder"></div>
+
+<div class="hiddenAll">
+
+<div id="seed">‡@{{kanji:s1}}</div>		//used for randomizer
+
+
+{{#s1}}
+	<div class="sent">{{kanji:s1}}</div>
+{{/s1}}
+{{#s2}}
+	<div class="sent">{{kanji:s2}}</div>
+{{/s2}}
+{{#s3}}
+	<div class="sent">{{kanji:s3}}</div>
+{{/s3}} 
+{{#s4}}
+	<div class="sent">{{kanji:s4}}</div>
+{{/s4}}
+{{#s5}}
+	<div class="sent">{{kanji:s5}}</div>
+{{/s5}}
+{{#s6}}
+	<div class="sent">{{kanji:s6}}</div>
+{{/s6}}
+{{#s7}}
+	<div class="sent">{{kanji:s7}}</div>
+{{/s7}}
+{{#s8}}
+	<div class="sent">{{kanji:s8}}</div>
+{{/s8}}
+
+</div>
+
+<script>
+//Create array out of my shit
+	var seedFeeder = document.getElementById("seed").innerHTML;
+	var sent = document.querySelectorAll('.sent');
+
+//Set current day unique value
+	var currentTimeInMs = new Date().getTime();
+	var timeInDays = Math.floor(currentTimeInMs / (60*60*12*1000));
+
+//"Randomizer"
+	var seed = timeInDays + seedFeeder.length;
+	function random() {
+		var x = Math.sin(seed++)*10000;
+		x = x - Math.floor(x);
+//		document.write(sent[0].innerHTML.length);
+		return x ;
+	}
+
+	var r = Math.floor(random() * sent.length);
+
+//attach sent
+	var japanese = sent[r];
+	var chosen = japanese.innerHTML;
+	document.getElementById('sentHolder').innerHTML = chosen;
+
+</script> 

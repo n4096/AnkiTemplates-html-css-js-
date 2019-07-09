@@ -1,0 +1,243 @@
+<div id="sentHolder" onclick="show('sentHolderHidden', 'sentHolder')"></div>
+<div id="sentHolderHidden" onclick="show('sentHolderHidden', 'sentHolder')">not Hidden</div>
+<br>
+<div id="hintEng" style="text-align: center;" onclick="english()">translatioin</div>
+<div id="sentEngHolder"></div>
+
+{{#s1}}
+	<hr>
+{{/s1}}
+
+{{#Audio}}
+<audio class="audioList" id="audio101"><source src="{{AudioPath}}"></audio>
+{{/Audio}}
+{{#AudioForvo}}
+<audio class="notAudioList" id="audioForvo"><source src="{{AudioForvoPath}}"></audio>
+{{/AudioForvo}}
+<audio class="audioList" id="audioHolder"></audio>
+
+<div id="playerRow"> 
+	<button onclick="document.getElementById('audio101').play()">&#9658;</button> 
+	<button onclick="document.getElementById('audioForvo').play()">&#9658;</button> 
+	<button onclick="document.getElementById('audioHolder').play()">&#9658;</button> 
+</div>
+
+<div id = "reading">{{furigana:Furigana}}</div>
+
+{{#Notes}}
+	<div class = "dictName">Notes:</div>
+	<div class="dict">{{furigana:Notes}}</div><br>
+{{/Notes}}
+
+{{#Kenkyusha}}
+	<div class = "dictName">Kenkyusha:</div>
+	<div class ="hiddenJp" id="Kenkyusha" onclick="show('Kenkyusha', 'KenkyushaK')">{{furigana:KenkyushaK}}</div>
+	<div class="dict" id="KenkyushaK" onclick="show('Kenkyusha', 'KenkyushaK')">{{kanji:Kenkyusha}}</div><br>
+{{/Kenkyusha}}
+
+{{#Daijirin}}
+	<div class = "dictName">Daijirin:</div>
+	<div class ="hiddenJp" id="Daijirin" onclick="show('Daijirin', 'DaijirinK')">{{furigana:DaijirinK}}</div>
+	<div class="dict" id="DaijirinK" onclick="show('Daijirin', 'DaijirinK')">{{kanji:Daijirin}}</div><br>
+{{/Daijirin}}
+
+{{#Daijisen}}
+	<div class = "dictName">Daijisen:</div>
+	<div class ="hiddenJp" id="Daijisen" onclick="show('Daijisen', 'DaijisenK')">{{furigana:DaijisenK}}</div>
+	<div class="dict" id="DaijisenK" onclick="show('Daijisen', 'DaijisenK')">{{kanji:Daijisen}}</div><br>
+{{/Daijisen}}
+
+{{#Warodai}}
+	<div class = "dictName">Warodai:</div>
+	<div class ="hiddenJp" id="Warodai" onclick="show('Warodai', 'WarodaiK')">{{furigana:WarodaiK}}</div>
+	<div class="dict" id="WarodaiK" onclick="show('Warodai', 'WarodaiK')">{{kanji:Warodai}}</div><br>
+{{/Warodai}}
+
+{{#EDICT}}
+	<div class = "dictName">EDICT:</div>
+	<div class="dict" >{{EDICT}}</div><br>
+{{/EDICT}}
+
+{{#WordNet}}
+	<div class = "dictName">WordNet:</div>
+	<div class ="hiddenJp" id="WordNet" onclick="show('WordNet', 'WordNetK')">{{furigana:WordNetK}}</div>
+	<div class="dict" id="WordNetK" onclick="show('WordNet', 'WordNetK')">{{kanji:WordNet}}</div><br>
+{{/WordNet}}
+
+{{#Koujien}}
+	<div class = "dictName">Koujien:</div>
+	<div class ="hiddenJp" id="Koujien" onclick="show('Koujien', 'KoujienK')">{{furigana:KoujienK}}</div>
+	<div class="dict" id="KoujienK" onclick="show('Koujien', 'KoujienK')">{{kanji:Koujien}}</div><br>
+{{/Koujien}}
+
+{{#Meikyou}}
+	<div class = "dictName">Meikyou:</div>
+	<div class ="hiddenJp" id="Meikyou" onclick="show('Meikyou', 'MeikyouK')">{{furigana:MeikyouK}}</div>
+	<div class="dict" id="MeikyouK" onclick="show('Meikyou', 'MeikyouK')">{{kanji:Meikyou}}</div><br>
+{{/Meikyou}}
+
+{{#Sanseido}}
+	<div class = "dictName">Sanseido:</div>
+	<div class ="hiddenJp" id="Sanseido" onclick="show('Sanseido', 'SanseidoK')">{{furigana:SanseidoK}}</div>
+	<div class="dict" id="SanseidoK" onclick="show('Sanseido', 'SanseidoK')">{{kanji:Sanseido}}</div><br>
+{{/Sanseido}}
+
+
+
+
+
+<div class="hiddenAll">
+
+	<div class="sentKanaFuri">‡@{{furigana:s1}}</div>
+	<div class="sentKanaFuri">‡A{{furigana:s2}}</div>
+	<div class="sentKanaFuri">‡B{{furigana:s3}}</div>
+	<div class="sentKanaFuri">‡C{{furigana:s4}}</div>
+	<div class="sentKanaFuri">‡D{{furigana:s5}}</div>
+	<div class="sentKanaFuri">‡E{{furigana:s6}}</div>
+	<div class="sentKanaFuri">‡F{{furigana:s7}}</div>
+	<div class="sentKanaFuri">‡G{{furigana:s8}}</div>
+
+	<div class="sentEng">{{s1....}}</div>
+	<div class="sentEng">{{s2....}}</div>
+	<div class="sentEng">{{s3....}}</div>
+	<div class="sentEng">{{s4....}}</div>
+	<div class="sentEng">{{s5....}}</div>
+	<div class="sentEng">{{s6....}}</div>
+	<div class="sentEng">{{s7....}}</div>
+	<div class="sentEng">{{s8....}}</div>
+
+</div>
+
+<hr>
+
+
+{{#s1}}
+	<div class="sentKana">‡@{{kanji:s1}}</div>
+	<div class="sentEngHint">{{hint:s1....}}</div>
+	<audio class="hiddenAudio" id="audioSent1"><source src="{{s1..}}"></audio> 
+	<button onclick="document.getElementById('audioSent1').play()">&#9658;</button> 
+{{/s1}}
+{{#s2}}
+	<div class="sentKana">‡A{{kanji:s2}}</div>
+	<div class="sentEngHint">{{hint:s2....}}</div>
+	<audio class="hiddenAudio"  id="audioSent2"><source src="{{s2..}}"></audio> 
+	<button onclick="document.getElementById('audioSent2').play()">&#9658;</button> 
+{{/s2}}
+{{#s3}}
+	<div class="sentKana">‡B{{kanji:s3}}</div>
+	<div class="sentEngHint">{{hint:s3....}}</div>
+	<audio class="hiddenAudio"  id="audioSent3"><source src="{{s3..}}"></audio> 
+	<button onclick="document.getElementById('audioSent3').play()">&#9658;</button> 
+{{/s3}}
+{{#s4}}
+	<div class="sentKana">‡C{{kanji:s4}}</div>
+	<div class="sentEngHint">{{hint:s4....}}</div>
+	<audio class="hiddenAudio"  id="audioSent4"><source src="{{s4..}}"></audio> 
+	<button onclick="document.getElementById('audioSent4').play()">&#9658;</button> 
+{{/s4}}
+{{#s5}}
+	<div class="sentKana">‡D{{kanji:s5}}</div>
+	<div class="sentEngHint">{{hint:s5....}}</div>
+	<audio class="hiddenAudio"  id="audioSent5"><source src="{{s5..}}"></audio> 
+	<button onclick="document.getElementById('audioSent5').play()">&#9658;</button> 
+{{/s5}}
+{{#s6}}
+	<div class="sentKana">‡E{{kanji:s6}}</div>
+	<div class="sentEngHint">{{hint:s6....}}</div>
+	<audio class="hiddenAudio"  id="audioSent6"><source src="{{s6..}}"></audio> 
+	<button onclick="document.getElementById('audioSent6').play()">&#9658;</button> 
+{{/s6}}
+{{#s7}}
+	<div class="sentKana">‡F{{kanji:s7}}</div>
+	<div class="sentEngHint">{{hint:s7....}}</div>
+	<audio class="hiddenAudio"  id="audioSent7"><source src="{{s7..}}"></audio> 
+	<button onclick="document.getElementById('audioSent7').play()">&#9658;</button> 
+{{/s7}}
+{{#s8}}
+	<div class="sentKana">‡G{{kanji:s8}}</div>
+	<div class="sentEngHint">{{hint:s8....}}</div>
+	<audio class="hiddenAudio" id="audioSent8"><source src="{{s8..}}"></audio> 
+	<button onclick="document.getElementById('audioSent8').play()">&#9658;</button> 
+{{/s8}}
+
+<script>
+//Create array out of my shit
+	var sent = document.querySelectorAll('.sentKana');
+	var sentFuri = document.querySelectorAll('.sentKanaFuri');
+	var sentEng = document.querySelectorAll('.sentEng');
+	var sentAudio = document.querySelectorAll('.hiddenAudio');
+
+
+//Set current day unique value
+	var currentTimeInMs = new Date().getTime();
+	var timeInDays = Math.floor(currentTimeInMs / (60*60*12*1000));
+
+//"Randomizer"
+	var seed = timeInDays + sent[0].innerHTML.length;
+	function random() {
+		var x = Math.sin(seed++)*10000;
+		x = x - Math.floor(x);
+		return x ;
+	}
+
+	var r = Math.floor(random() * sent.length);
+
+//attach sent
+	var japanese = sent[r];
+	var chosen = japanese.innerHTML;
+	var sillyString = chosen.substr(1);
+	document.getElementById('sentHolder').innerHTML = sillyString;
+
+//attach sentHidden
+	var japanese = sentFuri[r];
+	var furigana = japanese.innerHTML;
+	var sillyString = furigana.substr(1);
+	document.getElementById('sentHolderHidden').innerHTML = sillyString;
+
+//attach sentEng
+	var japanese = sentEng[r];
+	var engNoHint = japanese.innerHTML;
+
+//attach audio
+	var japanese = sentAudio[r];
+	var chosen = japanese.innerHTML;
+	document.getElementById('audioHolder').innerHTML = chosen;
+
+function english() {
+//uppon click sentence appear and button disappear
+	document.getElementById('sentEngHolder').innerHTML=engNoHint;
+	document.getElementById("hintEng").style.display = "none";
+}
+
+function show() {
+//accept 2 id, first to be hidden and second to be shown on click
+	var kana = document.getElementById(arguments[0]);
+	var clean = document.getElementById(arguments[1]);
+	if (kana.style.display=="block"){
+		kana.style.display="none";
+		clean.style.display="block";
+	}
+	else{
+		kana.style.display="block";
+		clean.style.display="none";
+	}
+}
+
+//seq player
+var audioElements = document.querySelectorAll('.audioList');
+
+var index = 0;
+
+function playNext(index){
+//document.getElementById("demo").innerHTML= index;
+	audioElements[index].play(); 
+	audioElements[index].addEventListener('ended', function(){ 
+		index++;
+		if(index < audioElements.length){
+			playNext(index);    
+		}
+	})
+}
+playNext(index);
+
+</script> 

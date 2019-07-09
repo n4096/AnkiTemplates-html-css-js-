@@ -1,0 +1,83 @@
+@font-face{ 
+font-family: _kyoukasho; 
+src: url('_kyoukasho.TTF');
+ }
+
+@font-face{ 
+font-family: garamond; 
+src: url('_gara.TTF');
+ }
+
+.card {
+font-family: _kyoukasho;
+font-size: 20px;
+padding: .2em;
+background-color: #000066;
+color:#ffff66;
+text-align: left;
+}
+
+.hiddenAll{
+display: none;
+font-size:30px;
+}
+
+
+#sentHolder{
+text-align: center;
+font-size: 50px;
+padding-top: 25px;
+}
+#sentHolderHidden{
+text-align: center;
+font-size: 50px;
+display: none;
+}
+
+
+#sentEngHolder {
+text-align: center;
+font-size: 25px;
+}
+#hintEng{
+font-size:15px;
+font-style: italic;
+color:blue;
+line-height: 30px;
+}
+
+.sentEng{
+font-size:20px;
+}
+
+#reading{
+font-size: 75px;
+text-align: center;
+}
+
+.dictName{
+font-size: 35px;
+font-family: garamond;
+}
+.dict{
+font-size:30px;
+}
+.hiddenJp{
+font-size:30px;
+display:none;
+}
+
+#playerRow{
+text-align:center;
+font-family: garamond; 
+}
+
+button {
+    font-size: 30px;
+    font-family: garamond; 
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
+    outline:none;
+}
